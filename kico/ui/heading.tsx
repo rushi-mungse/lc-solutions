@@ -15,8 +15,6 @@ export const TagLine = ({
   );
 };
 
-export default TagLine;
-
 type HeadingProps = {
   title?: string;
   text?: string;

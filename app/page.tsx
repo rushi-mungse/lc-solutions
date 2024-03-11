@@ -1,4 +1,4 @@
 const Home = () => {
-  return <main className="relative min-h-screen w-full overflow-hidden"></main>;
+  return <main className="relative overflow-hidden min-h-screen"></main>;
 };
 export default Home;

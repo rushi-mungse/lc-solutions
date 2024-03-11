@@ -98,6 +98,14 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      backgroundImage: {
+        "radial-gradient": "radial-gradient(var(--tw-gradient-stops))",
+        "conic-gradient":
+          "conic-gradient(from 225deg, #FFC876, #79FFF7, #9F53FF, #FF98E2, #FFC876)",
+      },
+      spacing: {
+        "0.25": "1px",
+      },
     },
   },
   plugins: [
@@ -142,7 +150,7 @@ const config = {
           "@apply text-lg leading-normal": {},
         },
         ".button": {
-          "@apply text-xs font-bold uppercase tracking-wider": {},
+          "@apply text-xs font-bold tracking-wider": {},
         },
       });
       addUtilities({
