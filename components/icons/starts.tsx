@@ -46,8 +46,8 @@ export const Stars = () => {
           y2="150"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#88E5BE" />
-          <stop offset="1" stop-color="#1A1A32" />
+          <stop stopColor="#88E5BE" />
+          <stop offset="1" stopColor="#1A1A32" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_701_17365"
@@ -57,8 +57,8 @@ export const Stars = () => {
           y2="206"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#DD734F" />
-          <stop offset="1" stop-color="#1A1A32" />
+          <stop stopColor="#DD734F" />
+          <stop offset="1" stopColor="#1A1A32" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_701_17365"
@@ -68,8 +68,8 @@ export const Stars = () => {
           y2="206"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#DD734F" />
-          <stop offset="1" stop-color="#1A1A32" />
+          <stop stopColor="#DD734F" />
+          <stop offset="1" stopColor="#1A1A32" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_701_17365"
@@ -79,8 +79,8 @@ export const Stars = () => {
           y2="326"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#B9AEDF" />
-          <stop offset="1" stop-color="#1A1A32" />
+          <stop stopColor="#B9AEDF" />
+          <stop offset="1" stopColor="#1A1A32" />
         </linearGradient>
       </defs>
     </svg>
