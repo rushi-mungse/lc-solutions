@@ -5,13 +5,12 @@ import Link, { LinkProps } from "next/link";
 
 import { cn } from "@/lib/utils";
 import { navConfig } from "@/config/nav";
-
-import { MenuIcon } from "@/icons/menu";
+import { MenuIcon } from "@/components/icons/menu";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import LogoLink from "./logo-link";
-import { ModeToggle } from "./mode-toggle";
+import { LogoLink } from "@/components/logo-link";
+import { ModeToggle } from "@/components/mode-toggle";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);

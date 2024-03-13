@@ -1,4 +1,4 @@
-import { ChatBubbleWing } from "@/icons/chat-buble-wing";
+import { ChatBubbleWing } from "@/components/icons/chat-buble-wing";
 
 type ChatMessageProps = {
   children: React.ReactNode;

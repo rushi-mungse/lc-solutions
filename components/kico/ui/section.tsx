@@ -1,6 +1,6 @@
 // import SectionSvg from "../assets/svg/SectionSvg";
 
-import { SectionBorder } from "@/icons/section-border";
+import { SectionBorder } from "@/components/icons/section-border";
 import { cn } from "@/lib/utils";
 
 type SectionProps = {

@@ -6,10 +6,8 @@ const config = {
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
+    "./components/**/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
-    "./kico/**/*.{ts,tsx}",
-    "./icons/**/*.{ts,tsx}",
   ],
   theme: {
     container: {

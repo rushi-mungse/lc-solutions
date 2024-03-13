@@ -1,10 +1,11 @@
-import { GridEffect } from "@/kico/effects/grid-effect";
-import { TagLine } from "@/kico/ui/heading";
-import { Status } from "./status";
 import Image from "next/image";
-import { BlurEffect } from "../effects/blur-effect";
+
 import { cn } from "@/lib/utils";
-import { DotEffect } from "../effects/dot-effect";
+import { GridEffect } from "@/components/kico/effects/grid-effect";
+import { TagLine } from "@/components/kico/ui/heading";
+import { Status } from "@/components/kico/ui/status";
+import { BlurEffect } from "@/components/kico/effects/blur-effect";
+import { DotEffect } from "@/components/kico/effects/dot-effect";
 
 type ProjectCardProps = {
   borderGradient?: boolean;

@@ -1,7 +1,7 @@
 "use client";
 
 import * as ReactDOMServer from "react-dom/server";
-import { CardGradientBorder } from "@/icons/card-gradient-border";
+import { CardGradientBorder } from "@/components/icons/card-gradient-border";
 import { cn } from "@/lib/utils";
 
 type CardGradientProps = {

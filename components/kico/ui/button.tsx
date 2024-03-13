@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { ButtonBorder } from "@/icons/button-border";
+import { ButtonBorder } from "@/components/icons/button-border";
 
 type ButtonProps = {
   color?: string;

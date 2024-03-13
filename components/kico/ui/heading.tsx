@@ -1,5 +1,5 @@
 import React from "react";
-import { brackets } from "@/icons/bracketes";
+import { brackets } from "@/components/icons/bracketes";
 import { cn } from "@/lib/utils";
 
 export const TagLine = ({

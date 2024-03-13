@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-import { LogoIcon } from "../icons/logo";
+import { LogoIcon } from "@/components/icons/logo";
 import { siteConfig } from "@/config/site";
 
-function LogoLink() {
+export function LogoLink() {
   return (
     <Link href="/" className="mr-12 flex items-center space-x-1">
       <LogoIcon className="size-6" />
@@ -11,5 +11,3 @@ function LogoLink() {
     </Link>
   );
 }
-
-export default LogoLink;
