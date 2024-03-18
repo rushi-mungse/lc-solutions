@@ -7,12 +7,12 @@ export function SiteFooter() {
         <p className="text-balance text-center text-sm leading-loose text-foreground md:text-left">
           Built by{" "}
           <a
-            href={siteConfig.links.twitter}
+            href={siteConfig.links.linkedin}
             target="_blank"
             rel="noreferrer"
             className="font-medium underline underline-offset-4"
           >
-            {siteConfig.name}
+            @rushi_mungse
           </a>
           . The source code is available on{" "}
           <a
