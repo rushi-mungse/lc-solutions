@@ -56,6 +56,7 @@ const Home = () => {
             {features.map((feature, id) => (
               <ProjectCard
                 key={id}
+                icon={feature.icon}
                 title={feature.title}
                 description={feature.description}
                 src={feature.src}

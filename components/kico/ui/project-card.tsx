@@ -15,11 +15,13 @@ type ProjectCardProps = {
   blurEffect?: boolean;
   gridEffect?: boolean;
   dotEffect?: boolean;
+  icon: React.ReactNode;
 };
 
 export const ProjectCard = ({
   borderGradient = false,
   src,
+  icon,
   title,
   description,
   blurEffect,
@@ -39,15 +41,7 @@ export const ProjectCard = ({
         {gridEffect && <GridEffect />}
 
         <div className="relative z-1">
-          <div className="mb-10">
-            <Image
-              className="w-full"
-              src={src}
-              width={628}
-              height={426}
-              alt="tv image"
-            />
-          </div>
+          <div className="mb-10 flex items-center justify-center">{icon}</div>
           <h4 className="h6 mb-4">{title}</h4>
           <p className="body-2 text-n-4 text-sm">{description}</p>
         </div>

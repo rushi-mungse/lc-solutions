@@ -1,8 +1,11 @@
+import { SlFire } from "react-icons/sl";
+
 type FeatureType = {
   title: string;
   description: string;
   src: string;
   borderGradient: boolean;
+  icon: React.ReactNode;
 };
 
 export const features: FeatureType[] = [
@@ -10,8 +13,9 @@ export const features: FeatureType[] = [
     title: "Problem Breakdowns",
     description:
       "Each post begins with a thorough breakdown of the problem statement. We dissect the requirements, constraints, and any edge cases you need to consider before diving into the solution.",
-    src: "/assets/tv.png",
+    src: "/assets/problem-brekdown.png",
     borderGradient: true,
+    icon: <SlFire className="size-16 text-yellow-500" />,
   },
 
   {
@@ -20,6 +24,7 @@ export const features: FeatureType[] = [
       "We explore various approaches to solving the problem, discussing the pros and cons of each. Whether it's brute force, greedy algorithms, dynamic programming, or any other technique, we provide insights into selecting the most appropriate strategy.",
     src: "/assets/tv.png",
     borderGradient: false,
+    icon: <SlFire className="size-16 text-yellow-500" />,
   },
 
   {
@@ -28,6 +33,7 @@ export const features: FeatureType[] = [
       "Step-by-step, we translate the chosen algorithm into code. Our explanations are beginner-friendly yet detailed enough to benefit even seasoned developers. We emphasize readability, efficiency, and best coding practices.",
     src: "/assets/tv.png",
     borderGradient: false,
+    icon: <SlFire className="size-16 text-yellow-500" />,
   },
 
   {
@@ -36,6 +42,7 @@ export const features: FeatureType[] = [
       "Understanding the time and space complexity of your solution is crucial for optimizing performance. We analyze the computational complexity of each algorithm to help you assess its efficiency.",
     src: "/assets/tv.png",
     borderGradient: false,
+    icon: <SlFire className="size-16 text-yellow-500" />,
   },
 
   {
@@ -44,6 +51,7 @@ export const features: FeatureType[] = [
       "We don't just stop at writing code; we also discuss test cases to validate our solution. Verifying correctness across various inputs ensures the robustness of your code.",
     src: "/assets/tv.png",
     borderGradient: false,
+    icon: <SlFire className="size-16 text-yellow-500" />,
   },
 
   {
@@ -52,6 +60,7 @@ export const features: FeatureType[] = [
       "Beyond the primary solution, we often explore alternative approaches, discussing trade-offs and scenarios where they might be more suitable.",
     src: "/assets/tv.png",
     borderGradient: false,
+    icon: <SlFire className="size-16 text-yellow-500" />,
   },
 
   {
@@ -60,6 +69,7 @@ export const features: FeatureType[] = [
       "Throughout our posts, we share useful tips, tricks, and common pitfalls to watch out for. These insights can help sharpen your problem-solving skills and make you a more proficient coder.",
     src: "/assets/tv.png",
     borderGradient: false,
+    icon: <SlFire className="size-16 text-yellow-500" />,
   },
 
   {
@@ -68,6 +78,7 @@ export const features: FeatureType[] = [
       "We encourage interaction! Feel free to leave comments, questions, or suggestions on our posts. Engaging with our community fosters collaboration and collective learning.",
     src: "/assets/tv.png",
     borderGradient: false,
+    icon: <SlFire className="size-16 text-yellow-500" />,
   },
 
   {
@@ -76,5 +87,6 @@ export const features: FeatureType[] = [
       "Understanding the time and space complexity of your solution is critical in competitive programming. We analyze the computational complexity of each algorithm, helping you assess its efficiency and suitability for competitive environments.",
     src: "/assets/tv.png",
     borderGradient: false,
+    icon: <SlFire className="size-16 text-yellow-500" />,
   },
 ];
