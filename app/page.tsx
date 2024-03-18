@@ -31,7 +31,7 @@ const Home = () => {
               src="/assets/ui-kit.png"
               title="Leetcode Problems Solution"
               description="Welcome to our blog dedicated to solving LeetCode problems!.In this blog, we provide comprehensive solutions and explanations for a wide range of LeetCode problems"
-              buttonHref="/proplems"
+              buttonHref="/problems"
               buttonTitle="Proplems"
             />
 
