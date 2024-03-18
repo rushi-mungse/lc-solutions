@@ -7,8 +7,8 @@ import { SiteFooter } from "@/components/site-footer";
 import ThemeProvider from "@/components/theme-provider";
 
 export const metadata: Metadata = {
-  title: "Rushikesh Mungse",
-  description: "Rushikesh Mungse Portfolio.",
+  title: "LC Solutions",
+  description: "This is leetcode solutions blog website.",
 };
 
 export default function RootLayout({
