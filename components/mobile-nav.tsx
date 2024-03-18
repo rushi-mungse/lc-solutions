@@ -11,6 +11,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { LogoLink } from "@/components/logo-link";
 import { ModeToggle } from "@/components/mode-toggle";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { SlFire } from "react-icons/sl";
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
@@ -21,7 +22,10 @@ export function MobileNav() {
 
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetContent side="right" className="pr-0">
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-3">
+            <Link href="/problem/lc-daily-problem">
+              <SlFire className="hover:text-yellow-500 transition-all" />
+            </Link>
             <ModeToggle />
           </div>
 

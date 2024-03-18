@@ -8,33 +8,13 @@ interface ComponentConfig {
 export const navConfig: ComponentConfig = {
   mainNav: [
     {
-      title: "Components",
-      href: "/components",
+      title: "Problems",
+      href: "/problems",
     },
     {
-      title: "Shadcn",
-      href: "/components/shadcn",
-    },
-    {
-      title: "Tailwindcss",
-      href: "/components/tailwindcss",
+      title: "Contest",
+      href: "/contest",
     },
   ],
-  sidebarNav: [
-    {
-      title: "Components",
-      href: "/components",
-      items: [],
-    },
-    {
-      title: "Shadcn",
-      href: "/components/shadcn",
-      items: [],
-    },
-    {
-      title: "Tailwindcss",
-      href: "/components/tailwindcss",
-      items: [],
-    },
-  ],
+  sidebarNav: [],
 };

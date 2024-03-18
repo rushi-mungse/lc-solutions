@@ -8,15 +8,21 @@ type SectionProps = {
   customPaddings?: string;
   topBorder?: boolean;
   children: React.ReactNode;
+  lines?: boolean;
 };
 
-const Section = ({ crosses, children, topBorder }: SectionProps) => {
+const Section = ({ crosses, children, topBorder, lines }: SectionProps) => {
   return (
     <div className={cn("relative py-10 lg:py-16 xl:py-20")}>
       {children}
 
-      <div className="hidden absolute top-0 left-5 w-0.25 h-full bg-stroke pointer-events-none md:block lg:left-7.5 xl:left-10" />
-      <div className="hidden absolute top-0 right-5 w-0.25 h-full bg-stroke pointer-events-none md:block lg:right-7.5 xl:right-10" />
+      {lines && (
+        <>
+          {" "}
+          <div className="hidden absolute top-0 left-5 w-0.25 h-full bg-stroke pointer-events-none md:block lg:left-7.5 xl:left-10" />
+          <div className="hidden absolute top-0 right-5 w-0.25 h-full bg-stroke pointer-events-none md:block lg:right-7.5 xl:right-10" />
+        </>
+      )}
 
       {crosses && <SectionBorder />}
 

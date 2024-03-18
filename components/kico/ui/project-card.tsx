@@ -9,11 +9,9 @@ import { DotEffect } from "@/components/kico/effects/dot-effect";
 
 type ProjectCardProps = {
   borderGradient?: boolean;
-  tag: string;
   src: string;
   title: string;
   description: string;
-  status: "done" | "inProgress" | "pending";
   blurEffect?: boolean;
   gridEffect?: boolean;
   dotEffect?: boolean;
@@ -21,11 +19,9 @@ type ProjectCardProps = {
 
 export const ProjectCard = ({
   borderGradient = false,
-  tag,
   src,
   title,
   description,
-  status,
   blurEffect,
   gridEffect,
   dotEffect,
@@ -33,7 +29,7 @@ export const ProjectCard = ({
   return (
     <div
       className={cn(
-        "md:flex even:md:translate-y-[7rem] p-[1px] rounded-[2.5rem] h-fit",
+        "md:flex p-[1px] rounded-[2.5rem] h-full max-w-sm",
         borderGradient ? "bg-conic-gradient" : "bg-stroke"
       )}
     >
@@ -41,13 +37,9 @@ export const ProjectCard = ({
         {blurEffect && <BlurEffect />}
         {dotEffect && <DotEffect />}
         {gridEffect && <GridEffect />}
-        <div className="relative z-1">
-          <div className="flex items-center justify-between max-w-[27rem] mb-8 md:mb-20">
-            <TagLine>{tag}</TagLine>
-            <Status status={status} />
-          </div>
 
-          <div className="mb-10 -my-10 -mx-15">
+        <div className="relative z-1">
+          <div className="mb-10">
             <Image
               className="w-full"
               src={src}
@@ -56,8 +48,8 @@ export const ProjectCard = ({
               alt="tv image"
             />
           </div>
-          <h4 className="h4 mb-4">{title}</h4>
-          <p className="body-2 text-n-4">{description}</p>
+          <h4 className="h6 mb-4">{title}</h4>
+          <p className="body-2 text-n-4 text-sm">{description}</p>
         </div>
       </div>
     </div>

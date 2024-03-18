@@ -1,8 +1,6 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import { allBlogs } from "contentlayer/generated";
+import { allProblems } from "contentlayer/generated";
 import type { Metadata, ResolvingMetadata } from "next";
-import { ChevronRightIcon, ExternalLinkIcon } from "@radix-ui/react-icons";
 
 import { cn } from "@/lib/utils";
 import { getTableOfContents } from "@/lib/toc";
@@ -10,8 +8,8 @@ import { getTableOfContents } from "@/lib/toc";
 import Mdx from "@/components/mdx";
 import { DashboardTableOfContents } from "@/components/toc";
 import { DocsPager } from "@/components/pager";
-import { badgeVariants } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { Badge } from "@/components/ui/badge";
 
 type BlogsParams = {
   params: {
@@ -20,7 +18,9 @@ type BlogsParams = {
 };
 
 const getComponetFromParams = async ({ params }: BlogsParams) => {
-  const blog = allBlogs.find((blog) => blog.slug === `blogs/${params?.slug}`);
+  const blog = allProblems.find(
+    (blog) => blog.slug === `problems/${params?.slug}`
+  );
   return blog ? blog : null;
 };
 
@@ -29,10 +29,10 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const blog = await getComponetFromParams({ params });
-  if (!blog) return { title: "Kico ui : tailwindcss components" };
+  if (!blog) return { title: "LC Problems Solutions" };
   return {
-    title: "Tailwindcss: " + blog.title,
-    description: blog?.description,
+    title: blog.title,
+    description: blog.title,
   };
 }
 
@@ -44,56 +44,29 @@ const BlogsPage = async ({ params }: BlogsParams) => {
   return (
     <main className="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
       <div className="mx-auto w-full min-w-0">
-        <div className="mb-4 flex items-center space-x-1 text-sm text-muted-foreground">
-          <div className="truncate">blogs</div>
-          <ChevronRightIcon className="size-4" />
-          <div className="font-medium text-foreground">{blog.breadcrumb}</div>
-        </div>
         <div className="space-y-2">
           <h1
             className={cn(
               "scroll-m-20 text-xl md:text-3xl lg:text-4xl font-bold tracking-tight"
             )}
           >
-            {blog.title}
+            {blog.questionNumber}. {blog.title}
           </h1>
-          {blog.description && (
-            <p className="text-sm mt-2 text-muted-foreground">
-              {blog.description}
-            </p>
-          )}
-        </div>
 
-        {blog.links ? (
-          <div className="flex items-center space-x-2 pt-4">
-            {blog.links?.doc && (
-              <Link
-                href={blog.links.doc}
-                target="_blank"
-                rel="noreferrer"
-                className={cn(badgeVariants({ variant: "secondary" }), "gap-1")}
-              >
-                Docs
-                <ExternalLinkIcon className="size-3" />
-              </Link>
-            )}
-            {blog.links?.api && (
-              <Link
-                href={blog.links.api}
-                target="_blank"
-                rel="noreferrer"
-                className={cn(badgeVariants({ variant: "secondary" }), "gap-1")}
-              >
-                API Reference
-                <ExternalLinkIcon className="size-3" />
-              </Link>
-            )}
+          <div className="space-x-2">
+            {blog.topics &&
+              blog.topics.map((topics, id) => (
+                <Badge variant={"outline"} key={id}>
+                  {topics.topic}
+                </Badge>
+              ))}
           </div>
-        ) : null}
+        </div>
 
         <div className="pb-12 pt-8">
           <Mdx code={blog.body.code} />{" "}
         </div>
+
         <DocsPager doc={blog} />
       </div>
       {blog.toc && (

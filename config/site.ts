@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "Kico Design",
+  name: "LC Solutions",
   siteUrl: "",
   links: {
     github: "",
