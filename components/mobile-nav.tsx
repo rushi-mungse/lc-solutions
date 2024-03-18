@@ -13,6 +13,8 @@ import { ModeToggle } from "@/components/mode-toggle";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { SlFire } from "react-icons/sl";
 import { dailyQuestion } from "@/constants";
+import { siteConfig } from "@/config/site";
+import { FaLinkedin } from "react-icons/fa";
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
@@ -27,6 +29,13 @@ export function MobileNav() {
             <Link href={dailyQuestion.buttonHref}>
               <SlFire className="hover:text-yellow-500 transition-all" />
             </Link>
+            <a
+              href={siteConfig.links.linkedin}
+              target="_blank"
+              className="group transition-all border p-2 rounded-md hover:bg-muted"
+            >
+              <FaLinkedin className="size-4 group-hover:text-blue-500 transition-all" />
+            </a>
             <ModeToggle />
           </div>
 

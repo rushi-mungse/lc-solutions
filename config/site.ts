@@ -4,5 +4,6 @@ export const siteConfig = {
   links: {
     github: "",
     twitter: "",
+    linkedin: "https://www.linkedin.com/in/rushikesh-mungse/",
   },
 };
