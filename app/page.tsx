@@ -2,9 +2,8 @@ import Section from "@/components/kico/ui/section";
 import { Card } from "@/components/kico/ui/card";
 import { CardWithImage } from "@/components/kico/ui/card-with-image";
 import { Heading } from "@/components/kico/ui/heading";
-import { SlFire } from "react-icons/sl";
 import { ProjectCard } from "@/components/kico/ui/project-card";
-import { features } from "@/constants";
+import { contest, dailyQuestion, features } from "@/constants";
 
 const Home = () => {
   return (
@@ -19,13 +18,7 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 justify-items-center">
-            <Card
-              icon={<SlFire className="size-16 text-yellow-500" />}
-              title="Leetcode Daily Question Solution"
-              description="452. Minimum Number of Arrows to Burst Balloons"
-              buttonHref="/problem/lc-daily-question"
-              buttonTitle="Read Solution"
-            />
+            <Card card={dailyQuestion} />
 
             <CardWithImage
               src="/assets/ui-kit.png"
@@ -35,13 +28,7 @@ const Home = () => {
               buttonTitle="Proplems"
             />
 
-            <Card
-              icon={<SlFire className="size-16 text-yellow-500" />}
-              title="Leetcode Contest Solutions"
-              description="LeetCode contests, providing comprehensive solutions and in-depth explanations"
-              buttonHref="/contest"
-              buttonTitle="Check Out"
-            />
+            <Card card={contest} />
           </div>
         </div>
       </Section>

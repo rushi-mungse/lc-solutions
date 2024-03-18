@@ -14,6 +14,11 @@ const problemsConfig: BlogsConfigType = {
           href: "/problems/two-sum",
           items: [],
         },
+        {
+          title: "452. Minimum Number of Arrows to Burst Balloons",
+          href: "/problems/minimum-number-of-arrows-to-burst-balloons",
+          items: [],
+        },
       ],
     },
   ],

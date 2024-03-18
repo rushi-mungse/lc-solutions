@@ -1,0 +1,115 @@
+---
+questionNumber: 452
+title: "Minimum Number of Arrows to Burst Balloons"
+level: "Medium"
+topics:
+  - topic: "Array"
+  - topic: "Greedy"
+  - topic: "Sorting"
+link: "https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/description"
+---
+
+# Description
+
+<div className="mt-4 text-md">
+  There are some spherical balloons taped onto a flat wall that represents the
+  XY-plane. The balloons are represented as a 2D integer array `points` where
+  `points[i] = [xstart, xend]` denotes a balloon whose horizontal diameter
+  stretches between `xstart` and `xend`. You do not know the exact y-coordinates
+  of the balloons.
+</div>
+
+<div className="mt-4 text-md">
+ Arrows can be shot up directly vertically (in the positive y-direction) from different points along the x-axis. A balloon with `xstart` and `xend` is burst by an arrow shot at x if `xstart <= x <= xend`. There is no limit to the number of arrows that can be shot. A shot arrow keeps traveling up infinitely, bursting any balloons in its path.
+</div>
+
+<div className="mt-4 text-md">
+  Given the array `points`, return the minimum number of arrows that must be
+  shot to burst all balloons.
+</div>
+
+# Example
+
+<div className="mt-2 flex flex-col">
+  <span className="mr-4"> Input </span>
+  <span className="text-muted-foreground text-sm ml-2">
+    points = [[10,16],[2,8],[1,6],[7,12]]
+  </span>
+</div>
+
+<div className="mt-2 flex flex-col">
+  <span className="mr-4"> Output </span>
+  <span className="text-muted-foreground text-sm ml-2">2</span>
+</div>
+
+<div className="mt-2 flex flex-col">
+  <span className="mr-4"> Explanation</span>
+  <span className="text-muted-foreground text-sm ml-2">
+    The balloons can be burst by 2 arrows:
+    <li> Shoot an arrow at x = 6, bursting the balloons [2,8] and [1,6]. </li>
+    <li>Shoot an arrow at x = 11, bursting the balloons [10,16] and [7,12] </li>
+  </span>
+</div>
+
+# Intuition
+
+- There are several `segments` on the one-dimensional coordinate axis, find out the `minimum` number of arrows which are orthogonal to the coordinate axis so that each segment can be shot through by at least one `arrow`.
+
+# Approaches
+
+## Using Sorting
+
+- Given points
+  <img src="/452/points.png" alt="aalysis" className="mt-4 mb-4" />
+- Sort the segments by the end
+
+  <img src="/452/sort-points.png" alt="sort-points" className="mt-4 mb-4" />
+
+  ```cpp
+   sort(points.begin(), points.end(), [&](auto &x, auto &y) {
+      return x[1] < y[1];
+    });
+  ```
+
+- Put an arrow at the end of the `1-st` segment
+  <img src="/452/first-arrow.png" alt="first-arrow" className="mt-4 mb-4" />
+- From the `2-nd` segment, we check whether the current arrow pass through the current `segment`, if not add an arrow, put it at the end of the current segment
+  <img src="/452/second-arrow.png" alt="second-arrow" className="mt-4 mb-4" />
+
+### Time Complexity
+
+- `O(N * log(N))` where 'N' is points length
+
+### Space Complexity
+
+- `O(1)`
+
+### Code
+
+```cpp title="cpp"
+class Solution {
+public:
+  int findMinArrowShots(vector<vector<int>>& points) {
+    sort(points.begin(), points.end(), [&](auto &x, auto &y) {
+      return x[1] < y[1];
+    });
+
+    int n = points.size(), ans = 1, max = points[0][1];
+
+    for(int i = 1; i < n; i++) {
+      if(points[i][0] > max) {
+        ans++;
+        max = points[i][1];
+      }
+    }
+
+    return ans;
+  }
+};
+```
+
+### Analysis
+
+<img src="/452/analysis.png" alt="aalysis" className="mt-4 mb-8" />
+
+### Happy Coding 😀
