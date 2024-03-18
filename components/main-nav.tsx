@@ -8,6 +8,7 @@ import { LogoLink } from "@/components/logo-link";
 import { ModeToggle } from "@/components/mode-toggle";
 
 import { SlFire } from "react-icons/sl";
+import { dailyQuestion } from "@/constants";
 
 export const MainNav = () => {
   const pathname = usePathname();
@@ -42,7 +43,7 @@ export const MainNav = () => {
         </nav>
       </div>
       <div className="flex items-center space-x-3">
-        <Link href="/problem/lc-daily-problem">
+        <Link href={dailyQuestion.buttonHref}>
           <SlFire className="hover:text-yellow-500 transition-all" />
         </Link>
         <ModeToggle />

@@ -12,6 +12,7 @@ import { LogoLink } from "@/components/logo-link";
 import { ModeToggle } from "@/components/mode-toggle";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { SlFire } from "react-icons/sl";
+import { dailyQuestion } from "@/constants";
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
@@ -23,7 +24,7 @@ export function MobileNav() {
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetContent side="right" className="pr-0">
           <div className="flex items-center space-x-3">
-            <Link href="/problem/lc-daily-problem">
+            <Link href={dailyQuestion.buttonHref}>
               <SlFire className="hover:text-yellow-500 transition-all" />
             </Link>
             <ModeToggle />
