@@ -104,8 +104,8 @@ export const features: FeatureType[] = [
 export const dailyQuestion = {
   icon: <SlFire className="size-16 text-yellow-500" />,
   title: "Leetcode Daily Question Solution",
-  description: "452. Minimum Number of Arrows to Burst Balloons",
-  buttonHref: "/problems/minimum-number-of-arrows-to-burst-balloons",
+  description: "621. Task Scheduler",
+  buttonHref: "/problems/task-scheduler",
   buttonTitle: "Read Solution",
 };
 

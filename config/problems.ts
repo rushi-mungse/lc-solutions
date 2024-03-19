@@ -19,6 +19,11 @@ const problemsConfig: BlogsConfigType = {
           href: "/problems/minimum-number-of-arrows-to-burst-balloons",
           items: [],
         },
+        {
+          title: "621. Task Scheduler",
+          href: "/problems/task-scheduler",
+          items: [],
+        },
       ],
     },
   ],

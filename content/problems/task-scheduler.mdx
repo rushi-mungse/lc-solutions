@@ -1,0 +1,129 @@
+---
+questionNumber: 621
+title: "Task Scheduler"
+level: "Medium"
+topics:
+  - topic: "Array"
+  - topic: "Hash Table"
+  - topic: "Sorting"
+  - topic: "Counting"
+link: "https://leetcode.com/problems/task-scheduler/description/"
+---
+
+# Description
+
+<div className="mt-4 text-md">
+  You are given an array of CPU `tasks`, each represented by letters `A` to `Z`,
+  and a cooling time, `n`. Each cycle or interval allows the completion of one
+  task. Tasks can be completed in any order, but there's a constraint: identical
+  tasks must be separated by at least `n` intervals due to cooling time.
+</div>
+
+<div className="mt-4 text-md">
+  Return the `minimum number of intervals` required to complete all tasks.
+</div>
+
+# Example
+
+<div className="mt-2 flex flex-col">
+  <span className="mr-4"> Input </span>
+  <span className="text-muted-foreground text-sm ml-2">
+    tasks = ['A', 'A', 'A', 'B', 'B', 'B', 'C', 'C', 'C', 'D', 'D', 'E'], n = 2
+  </span>
+</div>
+
+<div className="mt-2 flex flex-col">
+  <span className="mr-4"> Output </span>
+  <span className="text-muted-foreground text-sm ml-2">12</span>
+</div>
+
+<div className="mt-2 flex flex-col">
+  <span className="mr-4"> Explanation</span>
+  <ul className="text-muted-foreground text-sm ml-2">
+    A possible sequence is: A -> B -> C -> A -> B -> C -> D -> A -> B -> D -> C
+    -> A
+  </ul>
+</div>
+
+# Intuition
+
+- We need to do `task` every interval at `max 1` and similar task will do after `n` interval.
+- So we need to `organize` our task and do `n` interval `n different` tasks.
+
+# Approaches
+
+## Brute Force
+
+- We do first most `freq` tasks so we optimise our answer.
+
+- Organise task as most freq at first
+
+  <img src="/621/1.png" alt="621-1" className="mt-4 mb-4" />
+
+- Then do `n + 1` tasks because next task will do any taking ideal time
+  <img src="/621/2.png" alt="621-2" className="mt-4 mb-4" />
+
+### Time Complexity
+
+- `O(N * 26 * log(26))` where 'N' is points length
+
+### Space Complexity
+
+- `O(1)`
+
+### Code
+
+```cpp title="cpp"
+class Solution {
+public:
+  int leastInterval(vector<char>& tasks, int n) {
+      vector<int> f(26);
+      for(auto &t : tasks) f[t - 'A']++;
+
+      int ans = 0, ttl_tasks = tasks.size();
+
+      while(ttl_tasks > 0) {
+        sort(f.rbegin(), f.rend());
+        int cnt_tasks = 0;
+        for(int i = 0; i < 26 && cnt_tasks <= n; i++) {
+          if(f[i]) {
+              f[i]--;
+              ttl_tasks--;
+              cnt_tasks++;
+          }
+        }
+        ans += cnt_tasks;
+        if(ttl_tasks > 0) ans += n + 1 - cnt_tasks;
+      }
+      return ans;
+  }
+};
+```
+
+### Analysis
+
+<img src="/621/3.png" alt="aalysis" className="mt-4 mb-8" />
+
+## Using Math
+
+### Code
+
+```cpp
+class Solution {
+public:
+  int leastInterval(vector<char>& tasks, int n) {
+    vector<int> mp(26);
+    int count = 0;
+    for(auto &t : tasks)
+        count = max(count, ++mp[t - 'A']);
+
+    int ans = (count - 1) * (n + 1);
+    for(auto &cnt : mp)
+        if(cnt == count) ans++;
+
+    return max((int)tasks.size(), ans);
+  }
+}
+```
+
+### Happy Coding 😀
